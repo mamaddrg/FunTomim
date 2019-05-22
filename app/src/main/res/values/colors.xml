@@ -57,4 +57,13 @@
 	<color name="grey_800">#424242</color>
 	<color name="grey_900">#212121</color>
 	
+	<color name="blue_dark_100">#022D6F</color>
+	<color name="blue_dark_200">#011431</color>
+	
+	<color name="purple_dark_100">#3F0881</color>
+	<color name="purple_dark_200">#1E0241</color>
+	
+	<color name="pink_dark_100">#53022E</color>
+	<color name="pink_dark_200">#2E0219</color>
+	
 </resources>

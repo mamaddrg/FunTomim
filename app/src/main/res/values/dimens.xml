@@ -13,4 +13,9 @@
 	<dimen name="font_small">14dp</dimen>
 	<dimen name="font_small_x2">12dp</dimen>
 	
+	<dimen name="radius_standard">8dp</dimen>
+	<dimen name="radius_large">12dp</dimen>
+	<dimen name="radius_large_x2">16dp</dimen>
+	<dimen name="radius_little">4dp</dimen>
+	
 </resources>

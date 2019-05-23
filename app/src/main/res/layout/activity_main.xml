@@ -4,18 +4,29 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
+	android:fitsSystemWindows="true"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@drawable/gradients_animation_background"
 	tools:context=".MainActivity">
 	
-	<TextView
+	<include
+		android:id="@+id/layout_mode"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		layout="@layout/layout_game_modes"
+		android:visibility="gone"/>
+	
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+		android:id="@+id/fab_start_new_game"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="سلام دنیا"
+		android:layout_marginBottom="@dimen/margin_large_x2"
+		android:src="@drawable/ic_play_arrow"
+		app:backgroundTint="@color/purple_800"
+		app:fabSize="normal"
 		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintLeft_toLeftOf="parent"
-		app:layout_constraintRight_toRightOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

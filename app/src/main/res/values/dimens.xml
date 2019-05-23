@@ -7,11 +7,11 @@
 	<dimen name="margin_little">4dp</dimen>
 	<dimen name="margin_little_x2">4dp</dimen>
 	
-	<dimen name="font_standard">16dp</dimen>
-	<dimen name="font_large">18dp</dimen>
-	<dimen name="font_large_x2">20dp</dimen>
-	<dimen name="font_small">14dp</dimen>
-	<dimen name="font_small_x2">12dp</dimen>
+	<dimen name="font_standard">16sp</dimen>
+	<dimen name="font_large">18sp</dimen>
+	<dimen name="font_large_x2">20sp</dimen>
+	<dimen name="font_small">14sp</dimen>
+	<dimen name="font_small_x2">12sp</dimen>
 	
 	<dimen name="radius_standard">8dp</dimen>
 	<dimen name="radius_large">12dp</dimen>

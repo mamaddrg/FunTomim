@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var isGameModeOpen = false
     private lateinit var btnDecreaseTeams: Button
     private lateinit var btnIncreaseTeams: Button
     private lateinit var btnTimingAuto: Button
@@ -34,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sbRoundsCount: IndicatorSeekBar
     private lateinit var sbManualTiming: IndicatorSeekBar
 
+    private var isGameModeOpen = false
     private var numOfTeams = 2
     private var roundCount = 3
     private var isTimingAuto = true
@@ -54,7 +54,10 @@ class MainActivity : AppCompatActivity() {
         setManualTimingListener()
         setTimingModeButtonsClick()
         animateAutoTimingButtonForFirstTime()
-        // Todo Change the logic behind this solution
+        animateDisableTeamsForFirstTime()
+        // Todo Change the logic behind this solution for both
+        // when we want to set animation on something like this, animation will start from current situation
+        // which cause some problems, because we set alpha to 0.5 and scale to 0.8 from xml by default
 
     }
 
@@ -171,7 +174,7 @@ class MainActivity : AppCompatActivity() {
             if (numOfTeams > 2) {
                 numOfTeams--
                 tvNumOfTeams.text = numOfTeams.toString()
-                enableOrDisableTeams()
+                disableTeam(numOfTeams)
             }
         }
     }
@@ -183,32 +186,40 @@ class MainActivity : AppCompatActivity() {
             if (numOfTeams < 4) {
                 numOfTeams++
                 tvNumOfTeams.text = numOfTeams.toString()
-                enableOrDisableTeams()
+                enableTeam(numOfTeams)
             }
         }
     }
 
-    private fun enableOrDisableTeams() {
+    private fun enableTeam(teamNumber: Int) {
 
-        when (numOfTeams) {
-
-            2 -> {
-                etThirdTeam.isEnabled = false
-                etThirdTeam.alpha = 0.5f
-                etFourthTeam.isEnabled = false
-                etFourthTeam.alpha = 0.5f }
+        when (teamNumber) {
 
             3 -> {
                 etThirdTeam.isEnabled = true
-                etThirdTeam.alpha = 1f
-                etFourthTeam.isEnabled = false
-                etFourthTeam.alpha = 0.5f }
+                etThirdTeam.clearAnimation()
+                etThirdTeam.animation = AnimationUtils.loadAnimation(this, R.anim.anim_select_edittext) }
 
             4 -> {
-                etThirdTeam.isEnabled = true
-                etThirdTeam.alpha = 1f
                 etFourthTeam.isEnabled = true
-                etFourthTeam.alpha = 1f }
+                etFourthTeam.clearAnimation()
+                etFourthTeam.animation = AnimationUtils.loadAnimation(this, R.anim.anim_select_edittext) }
+        }
+    }
+
+    private fun disableTeam(teamNumber: Int) {
+
+        when (teamNumber) {
+
+            2 -> {
+                etThirdTeam.isEnabled = false
+                etThirdTeam.clearAnimation()
+                etThirdTeam.animation = AnimationUtils.loadAnimation(this, R.anim.anim_deselect_edittext) }
+
+            3 -> {
+                etFourthTeam.isEnabled = false
+                etFourthTeam.clearAnimation()
+                etFourthTeam.animation = AnimationUtils.loadAnimation(this, R.anim.anim_deselect_edittext) }
         }
     }
 
@@ -329,6 +340,12 @@ class MainActivity : AppCompatActivity() {
             clearAnimation()
             animation = AnimationUtils.loadAnimation(this@MainActivity, R.anim.anim_select_button)
         }
+    }
+
+    private fun animateDisableTeamsForFirstTime() {
+
+        etThirdTeam.animation = AnimationUtils.loadAnimation(this, R.anim.anim_deselect_edittext)
+        etFourthTeam.animation = AnimationUtils.loadAnimation(this, R.anim.anim_deselect_edittext)
     }
 
 }

@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-	android:id="@+id/main_layout"
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:fitsSystemWindows="true"
+	android:id="@+id/main_layout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@drawable/gradients_animation_background"
+	android:fitsSystemWindows="true"
 	tools:context=".MainActivity">
+	
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="رویدادی موجود نیست!"
+		android:textSize="@dimen/font_large_x2"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 	
 	<include
 		android:id="@+id/layout_mode"
+		layout="@layout/layout_game_modes"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		layout="@layout/layout_game_modes"
-		android:visibility="gone"/>
+		android:visibility="gone" />
 	
 	<com.google.android.material.floatingactionbutton.FloatingActionButton
 		android:id="@+id/fab_start_new_game"
@@ -27,6 +36,32 @@
 		app:fabSize="normal"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/btn_history"
 		app:layout_constraintStart_toStartOf="parent" />
+	
+	<Button
+		android:id="@+id/btn_rules"
+		android:layout_width="80dp"
+		android:layout_height="35dp"
+		android:background="@drawable/selected_button_purple"
+		android:text="قوانین"
+		android:textSize="@dimen/font_small_x2"
+		app:layout_constraintBottom_toBottomOf="@+id/fab_start_new_game"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/fab_start_new_game"
+		app:layout_constraintTop_toTopOf="@+id/fab_start_new_game" />
+	
+	<Button
+		android:id="@+id/btn_history"
+		android:layout_width="80dp"
+		android:layout_height="35dp"
+		android:background="@drawable/selected_button_purple"
+		android:text="تاریخچه"
+		android:textSize="@dimen/font_small_x2"
+		app:layout_constraintBottom_toBottomOf="@+id/fab_start_new_game"
+		app:layout_constraintEnd_toStartOf="@+id/fab_start_new_game"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/fab_start_new_game" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

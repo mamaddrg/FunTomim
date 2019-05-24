@@ -4,7 +4,6 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         
-        <item name="android:windowBackground">@color/backGround</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">@dimen/font_standard</item>
         <item name="android:fontFamily">@font/iran_sans</item>

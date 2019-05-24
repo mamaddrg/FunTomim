@@ -10,6 +10,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.drg.funtomim.GamePageFragments.FragmentChooseCategory
 import com.drg.funtomim.R
 import com.warkiz.widget.IndicatorSeekBar
 import com.warkiz.widget.OnSeekChangeListener
@@ -53,27 +54,27 @@ class FragmentGameSettings : Fragment() {
         // TODO change the logic behind first time items styling (2 functions bellow)
         animateAutoTimingButtonForFirstTime()
         animateDisableTeamsForFirstTime()
+        setClickOnStartGame()
         return viewRoot
     }
 
     private fun initViews() {
 
-        viewRoot.apply {
-            btnDecreaseTeams = findViewById(R.id.btn_decrease_players)
-            btnIncreaseTeams = findViewById(R.id.btn_increase_players)
-            btnTimingAuto = findViewById(R.id.btn_auto_timing_for_round)
-            btnTimingManual = findViewById(R.id.btn_manual_timing_for_round)
-            btnStartGame = findViewById(R.id.btn_start_game)
-            tvNumOfTeams = findViewById(R.id.tv_show_num_of_teams)
-            tvNumOfRounds = findViewById(R.id.tv_show_num_of_rounds)
-            tvTimeOfRounds = findViewById(R.id.tv_show_manual_time)
-            etFirstTeam = findViewById(R.id.et_first_team_name)
-            etSecondTeam = findViewById(R.id.et_second_team_name)
-            etThirdTeam = findViewById(R.id.et_third_team_name)
-            etFourthTeam = findViewById(R.id.et_fourth_team_name)
-            sbRoundsCount = findViewById(R.id.seek_num_of_rounds)
-            sbManualTiming = findViewById(R.id.seek_manual_timing)
-        }
+        btnDecreaseTeams = viewRoot.findViewById(R.id.btn_decrease_players)
+        btnIncreaseTeams = viewRoot.findViewById(R.id.btn_increase_players)
+        btnTimingAuto = viewRoot.findViewById(R.id.btn_auto_timing_for_round)
+        btnTimingManual = viewRoot.findViewById(R.id.btn_manual_timing_for_round)
+        btnStartGame = viewRoot.findViewById(R.id.btn_start_game)
+        tvNumOfTeams = viewRoot.findViewById(R.id.tv_show_num_of_teams)
+        tvNumOfRounds = viewRoot.findViewById(R.id.tv_show_num_of_rounds)
+        tvTimeOfRounds = viewRoot.findViewById(R.id.tv_show_manual_time)
+        etFirstTeam = viewRoot.findViewById(R.id.et_first_team_name)
+        etSecondTeam = viewRoot.findViewById(R.id.et_second_team_name)
+        etThirdTeam = viewRoot.findViewById(R.id.et_third_team_name)
+        etFourthTeam = viewRoot.findViewById(R.id.et_fourth_team_name)
+        sbRoundsCount = viewRoot.findViewById(R.id.seek_num_of_rounds)
+        sbManualTiming = viewRoot.findViewById(R.id.seek_manual_timing)
+
     }
 
     private fun setClickOnDecreaseTeams() {
@@ -291,6 +292,16 @@ class FragmentGameSettings : Fragment() {
 
         etThirdTeam.animation = AnimationUtils.loadAnimation(context, R.anim.anim_deselect_edittext)
         etFourthTeam.animation = AnimationUtils.loadAnimation(context, R.anim.anim_deselect_edittext)
+    }
+
+    private fun setClickOnStartGame() {
+
+        btnStartGame.setOnClickListener {
+            fragmentManager!!.beginTransaction()
+                .add(R.id.fl_main, FragmentChooseCategory())
+                .addToBackStack("fnwgkbw")
+                .commit()
+        }
     }
 
 }

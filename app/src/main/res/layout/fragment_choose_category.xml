@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/gradient_dark_purple"
+	tools:context=".GamePageFragments.FragmentChooseCategory">
+	
+	
+	<TextView
+		android:id="@+id/tv_words"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_large"
+		android:text="کلمات"
+		android:textSize="@dimen/font_large_x2"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	
+	<GridView
+		android:id="@+id/gv_categories"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_marginTop="@dimen/margin_large_x2"
+		android:columnWidth="120dp"
+		android:gravity="center"
+		android:horizontalSpacing="@dimen/margin_large"
+		android:numColumns="auto_fit"
+		android:paddingStart="@dimen/margin_large_x2"
+		android:paddingEnd="@dimen/margin_large_x2"
+		android:stretchMode="columnWidth"
+		android:verticalSpacing="@dimen/margin_standard"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/tv_words" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

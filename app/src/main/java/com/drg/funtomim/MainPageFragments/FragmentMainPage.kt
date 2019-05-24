@@ -30,8 +30,7 @@ class FragmentMainPage : Fragment() {
 
         fabStartGame.setOnClickListener {
             fragmentManager!!.beginTransaction()
-                .setCustomAnimations(
-                    R.animator.anim_flip_right_in,
+                .setCustomAnimations(R.animator.anim_flip_right_in,
                     R.animator.anim_flip_right_out,
                     R.animator.anim_flip_right_in,
                     R.animator.anim_flip_right_out)

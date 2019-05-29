@@ -13,9 +13,9 @@ class GridViewCategoryAdapter(private val context: Context,
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-        return if (convertView == null) {
+        return if (convertView == null)
             LayoutInflater.from(context).inflate(R.layout.item_category , parent, false)
-        } else
+        else
             convertView
     }
 

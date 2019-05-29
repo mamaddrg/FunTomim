@@ -37,7 +37,7 @@ class FragmentGameSettings : Fragment() {
     private var numOfTeams = 2
     private var roundCount = 3
     private var isTimingAuto = true
-    private var manualTimingSeconds = 90
+    private var manualTimingSeconds = 75
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -298,8 +298,12 @@ class FragmentGameSettings : Fragment() {
 
         btnStartGame.setOnClickListener {
             fragmentManager!!.beginTransaction()
-                .add(R.id.fl_main, FragmentChooseCategory())
-                .addToBackStack("fnwgkbw")
+                .setCustomAnimations(R.animator.anim_flip_right_in,
+                    R.animator.anim_flip_right_out,
+                    R.animator.anim_flip_right_in,
+                    R.animator.anim_flip_right_out)
+                .replace(R.id.fl_main, FragmentChooseCategory())
+                .addToBackStack("FRAGMENT_START_GAME")
                 .commit()
         }
     }

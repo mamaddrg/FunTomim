@@ -66,6 +66,8 @@ class BottomSheetScore: BottomSheetDialogFragment() {
                 .replace(R.id.fl_main, FragmentGame())
                 .addToBackStack("FRAGMENT_GAME")
                 .commit()
+
+            dismiss()
         }
 
         return viewRoot

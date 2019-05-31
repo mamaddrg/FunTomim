@@ -25,7 +25,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
 		android:layout_marginTop="@dimen/margin_large_x2"
-		android:columnWidth="120dp"
+		android:columnWidth="100dp"
 		android:gravity="center"
 		android:horizontalSpacing="@dimen/margin_large"
 		android:numColumns="auto_fit"

@@ -16,7 +16,7 @@ class FragmentChooseCategory : Fragment() {
 
         val viewRoot = inflater.inflate(R.layout.fragment_choose_category, container, false)
         val gridView = viewRoot.findViewById<GridView>(R.id.gv_categories)
-        gridView.adapter = GridViewCategoryAdapter(context!!, arrayListOf("a","b","c","d","e","f","g"))
+        gridView.adapter = GridViewCategoryAdapter(context!!, arrayListOf("a","b","c","d","e","f","g","h","i","j"))
         gridView.setOnItemClickListener { parent, view, position, id ->
 
             BottomSheetScore().show(fragmentManager!!, "Tag")

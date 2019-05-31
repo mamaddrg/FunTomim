@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/gradient_dark_blue"
+	tools:context=".GamePageFragments.FragmentTurn">
+	
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:adjustViewBounds="true"
+		android:scaleType="fitXY"
+		app:layout_constraintBottom_toTopOf="@+id/gl_screen_half"
+		app:layout_constraintTop_toTopOf="parent"
+		app:srcCompat="@drawable/bg_header_game" />
+	
+	<com.marcinmoskala.arcseekbar.ArcSeekBar
+		android:id="@+id/sb_round_counter"
+		android:layout_width="match_parent"
+		android:layout_height="80dp"
+		android:layout_marginStart="@dimen/margin_large_x2"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="@dimen/margin_large_x2"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:progress="30"
+		app:progressBackgroundColor="@color/blue_300"
+		app:progressBackgroundWidth="10dp"
+		app:progressColor="@color/blue_900"
+		app:progressWidth="12dp"
+		app:roundEdges="true"
+		app:thumb="@drawable/circle_button_purple" />
+	
+	<TextView
+		android:id="@+id/tv_round_counter"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:text="دور 8 از 30"
+		android:textSize="@dimen/font_large"
+		app:layout_constraintBottom_toBottomOf="@+id/sb_round_counter"
+		app:layout_constraintEnd_toEndOf="@+id/sb_round_counter"
+		app:layout_constraintStart_toStartOf="@+id/sb_round_counter" />
+	
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/constraintLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/margin_large_x2"
+		android:layout_marginEnd="@dimen/margin_large_x2"
+		android:paddingBottom="@dimen/margin_large"
+		android:background="@drawable/bg_layot_teams_container"
+		android:minHeight="200dp"
+		app:layout_constraintBottom_toTopOf="@+id/gl_screen_half"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/gl_screen_half">
+		
+		<RelativeLayout
+			android:id="@+id/layout_specs"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/margin_large_x2"
+			android:layout_marginTop="@dimen/margin_large"
+			android:layout_marginEnd="@dimen/margin_large_x2"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+			
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:text="نام تیم"
+				android:textColor="@color/grey_200"
+				android:textSize="@dimen/font_small_x2" />
+			
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:text="امتیاز"
+				android:textColor="@color/grey_200"
+				android:textSize="@dimen/font_small_x2" />
+			
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:text="نوبت"
+				android:textColor="@color/grey_200"
+				android:textSize="@dimen/font_small_x2" />
+		
+		</RelativeLayout>
+		
+		<RelativeLayout
+			android:id="@+id/layout_first_team"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/margin_large"
+			android:layout_marginTop="@dimen/margin_large_x2"
+			android:layout_marginEnd="@dimen/margin_large"
+			android:gravity="center_vertical"
+			app:layout_constraintTop_toBottomOf="@id/layout_specs"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent">
+			
+			<TextView
+				android:id="@+id/tv_first_team_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:text="مهندسی" />
+			
+			<TextView
+				android:id="@+id/tv_first_team_scores"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:text="28"/>
+			
+			<CheckBox
+				android:id="@+id/cb_first_team_turn"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:checked="true"
+				android:clickable="false"
+				android:buttonTint="@android:color/white" />
+		
+		</RelativeLayout>
+		
+		<RelativeLayout
+			android:id="@+id/layout_second_team"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/margin_large"
+			android:layout_marginTop="@dimen/margin_standard"
+			android:layout_marginEnd="@dimen/margin_large"
+			android:gravity="center_vertical"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/layout_first_team">
+			
+			<TextView
+				android:id="@+id/tv_second_team_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:text="علوم" />
+			
+			<TextView
+				android:id="@+id/tv_second_team_scores"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:text="25"/>
+			
+			<CheckBox
+				android:id="@+id/cb_second_team_turn"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:clickable="false"
+				android:buttonTint="@android:color/white" />
+		
+		</RelativeLayout>
+		
+		<RelativeLayout
+			android:id="@+id/layout_third_team"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/margin_large"
+			android:layout_marginTop="@dimen/margin_standard"
+			android:layout_marginEnd="@dimen/margin_large"
+			android:gravity="center_vertical"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/layout_second_team">
+			
+			<TextView
+				android:id="@+id/tv_third_team_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:text="کامپیوتر" />
+			
+			<TextView
+				android:id="@+id/tv_third_team_scores"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:text="53" />
+			
+			<CheckBox
+				android:id="@+id/cb_third_team_turn"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:clickable="false"
+				android:buttonTint="@android:color/white" />
+		
+		</RelativeLayout>
+		
+		<RelativeLayout
+			android:id="@+id/layout_fourth_team"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/margin_large"
+			android:layout_marginTop="@dimen/margin_standard"
+			android:layout_marginEnd="@dimen/margin_large"
+			android:gravity="center_vertical"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/layout_third_team">
+			
+			<TextView
+				android:id="@+id/tv_fourth_team_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:text="ادبیات" />
+			
+			<TextView
+				android:id="@+id/tv_fourth_team_scores"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:text="17" />
+			
+			<CheckBox
+				android:id="@+id/cb_fourth_team_turn"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:clickable="false"
+				android:buttonTint="@android:color/white" />
+		
+		</RelativeLayout>
+	
+	
+	</androidx.constraintlayout.widget.ConstraintLayout>
+	
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/gl_screen_half"
+		android:layout_width="wrap_content"
+		android:layout_height="1dp"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.5" />
+	
+	<Button
+		android:id="@+id/btn_start_game_turn"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/margin_large_x2"
+		android:layout_marginEnd="@dimen/margin_large_x2"
+		android:layout_marginBottom="@dimen/margin_large_x2"
+		android:background="@drawable/bg_button_start_game"
+		android:text="انجام حرکت"
+		android:textSize="@dimen/font_large"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

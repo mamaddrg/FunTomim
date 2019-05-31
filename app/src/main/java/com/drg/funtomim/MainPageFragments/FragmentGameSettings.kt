@@ -10,7 +10,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.drg.funtomim.GamePageFragments.FragmentChooseCategory
+import com.drg.funtomim.GamePageFragments.FragmentTurn
 import com.drg.funtomim.R
 import com.warkiz.widget.IndicatorSeekBar
 import com.warkiz.widget.OnSeekChangeListener
@@ -302,8 +302,8 @@ class FragmentGameSettings : Fragment() {
                     R.animator.anim_flip_right_out,
                     R.animator.anim_flip_right_in,
                     R.animator.anim_flip_right_out)
-                .replace(R.id.fl_main, FragmentChooseCategory())
-                .addToBackStack("FRAGMENT_START_GAME")
+                .replace(R.id.fl_main, FragmentTurn())
+                .addToBackStack("FRAGMENT_GAME")
                 .commit()
         }
     }

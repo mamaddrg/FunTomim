@@ -57,6 +57,16 @@
 	<color name="orange_800">#ef6c00</color>
 	<color name="orange_900">#e65100</color>
 	
+	<color name="yellow_100">#fff9c4</color>
+	<color name="yellow_200">#fff59d</color>
+	<color name="yellow_300">#fff176</color>
+	<color name="yellow_400">#ffee58</color>
+	<color name="yellow_500">#ffeb3b</color>
+	<color name="yellow_600">#fdd835</color>
+	<color name="yellow_700">#fbc02d</color>
+	<color name="yellow_800">#f9a825</color>
+	<color name="yellow_900">#f57f17</color>
+	
 	<color name="green_100">#c8e6c9</color>
 	<color name="green_200">#a5d6a7</color>
 	<color name="green_300">#81c784</color>
